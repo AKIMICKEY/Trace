@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 简化版App图标 - 适合iOS/Android -->
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 背景渐变 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F4EF"/>
+      <stop offset="100%" style="stop-color:#EDE5DA"/>
+    </linearGradient>
+    
+    <!-- 墨滴渐变 -->
+    <linearGradient id="inkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3D5A6C"/>
+      <stop offset="100%" style="stop-color:#2A3F4D"/>
+    </linearGradient>
+    
+    <!-- 涟漪渐变 -->
+    <linearGradient id="rippleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574"/>
+      <stop offset="100%" style="stop-color:#B8864A"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 圆角矩形背景 (iOS风格) -->
+  <rect x="40" y="40" width="944" height="944" rx="200" ry="200" fill="url(#bgGrad)"/>
+  
+  <!-- 涟漪 - 外层 -->
+  <circle cx="512" cy="512" r="320" fill="none" stroke="url(#rippleGrad)" stroke-width="40" opacity="0.2"/>
+  
+  <!-- 涟漪 - 中层 -->
+  <circle cx="512" cy="512" r="240" fill="none" stroke="url(#rippleGrad)" stroke-width="36" opacity="0.4"/>
+  
+  <!-- 涟漪 - 内层 -->
+  <circle cx="512" cy="512" r="160" fill="none" stroke="url(#rippleGrad)" stroke-width="32" opacity="0.65"/>
+  
+  <!-- 笔迹弧线 -->
+  <path d="M 320 350 Q 420 480, 512 512 Q 620 560, 740 700" 
+        fill="none" 
+        stroke="#C4956A" 
+        stroke-width="24" 
+        stroke-linecap="round"
+        opacity="0.75"/>
+  
+  <!-- 墨滴主体 -->
+  <path d="M 512 380 
+           C 512 380, 580 450, 580 520 
+           C 580 570, 550 610, 512 610 
+           C 474 610, 444 570, 444 520 
+           C 444 450, 512 380, 512 380 Z" 
+        fill="url(#inkGrad)"/>
+  
+  <!-- 墨滴高光 -->
+  <ellipse cx="485" cy="480" rx="18" ry="28" fill="#4A6B7C" opacity="0.4"/>
+</svg>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 背景渐变 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5EDE4"/>
+      <stop offset="100%" style="stop-color:#E8DDD0"/>
+    </linearGradient>
+    
+    <!-- 墨滴渐变 -->
+    <linearGradient id="inkGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D4A5E"/>
+      <stop offset="100%" style="stop-color:#1A2F3D"/>
+    </linearGradient>
+    
+    <!-- 涟漪渐变 -->
+    <linearGradient id="rippleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C4956A"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+    
+    <!-- 笔迹渐变 -->
+    <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#D4A574"/>
+      <stop offset="100%" style="stop-color:#C4956A"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景圆 -->
+  <circle cx="512" cy="512" r="480" fill="url(#bgGradient)"/>
+  
+  <!-- 外层装饰圆环 -->
+  <circle cx="512" cy="512" r="460" fill="none" stroke="#C4956A" stroke-width="2" opacity="0.3"/>
+  
+  <!-- 涟漪波纹 - 第三层（最外层） -->
+  <path d="M 512 220 
+           C 680 220, 804 344, 804 512 
+           C 804 680, 680 804, 512 804" 
+        fill="none" 
+        stroke="url(#rippleGradient)" 
+        stroke-width="24" 
+        stroke-linecap="round"
+        opacity="0.25"/>
+  
+  <!-- 涟漪波纹 - 第二层 -->
+  <path d="M 512 280 
+           C 630 280, 732 382, 732 512 
+           C 732 642, 630 744, 512 744" 
+        fill="none" 
+        stroke="url(#rippleGradient)" 
+        stroke-width="28" 
+        stroke-linecap="round"
+        opacity="0.45"/>
+  
+  <!-- 涟漪波纹 - 第一层（最内层） -->
+  <path d="M 512 340 
+           C 580 340, 660 420, 660 512 
+           C 660 604, 580 684, 512 684" 
+        fill="none" 
+        stroke="url(#rippleGradient)" 
+        stroke-width="32" 
+        stroke-linecap="round"
+        opacity="0.7"/>
+  
+  <!-- 笔迹弧线 - 从左上到右下穿过涟漪 -->
+  <path d="M 280 320 
+           Q 400 450, 512 512 
+           Q 620 570, 720 720" 
+        fill="none" 
+        stroke="url(#strokeGradient)" 
+        stroke-width="18" 
+        stroke-linecap="round"
+        opacity="0.8"/>
+  
+  <!-- 中心墨滴 -->
+  <g transform="translate(512, 512)">
+    <!-- 墨滴主体 -->
+    <path d="M 0 -60 
+             C 35 -60, 50 -20, 50 20 
+             C 50 50, 28 70, 0 70 
+             C -28 70, -50 50, -50 20 
+             C -50 -20, -35 -60, 0 -60 Z" 
+          fill="url(#inkGradient)"/>
+    
+    <!-- 墨滴高光 -->
+    <ellipse cx="-15" cy="-10" rx="12" ry="18" fill="#4A6B7C" opacity="0.5"/>
+    
+    <!-- 墨滴顶部小高光点 -->
+    <circle cx="-8" cy="-35" r="6" fill="#5A7B8C" opacity="0.4"/>
+  </g>
+  
+  <!-- 装饰性小点 - 散落的墨点 -->
+  <circle cx="380" cy="380" r="6" fill="#2D4A5E" opacity="0.3"/>
+  <circle cx="640" cy="420" r="4" fill="#2D4A5E" opacity="0.25"/>
+  <circle cx="580" cy="640" r="5" fill="#2D4A5E" opacity="0.2"/>
+  <circle cx="340" cy="580" r="3" fill="#2D4A5E" opacity="0.15"/>
+  
+  <!-- 底部品牌文字（可选，用于启动图标） -->
+  <!-- <text x="512" y="920" text-anchor="middle" font-family="serif" font-size="48" fill="#2D4A5E" opacity="0.6">痕迹</text> -->
+</svg>
