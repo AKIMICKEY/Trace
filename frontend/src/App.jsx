@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <div className="app-container">
         <header className="header">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div className="icon-title-row">
             <HenjiIcon size={32} />
             <h1 className="header-title">痕迹</h1>
           </div>

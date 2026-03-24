@@ -153,8 +153,8 @@ function DiaryDetail() {
   return (
     <div>
       <div className="diary-card watercolor-border">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-          <h2 style={{ margin: 0 }}>{dayjs(date).format('YYYY年MM月DD日')}</h2>
+        <div className="section-header">
+          <h2 className="section-title">{dayjs(date).format('YYYY年MM月DD日')}</h2>
           <button className="btn-secondary" onClick={() => navigate('/')}>
             <ArrowLeftOutlined /> 返回日历
           </button>
@@ -205,7 +205,7 @@ function DiaryDetail() {
           )}
         </div>
         
-        <div style={{ marginTop: 16, display: 'flex', gap: 12 }}>
+        <div className="actions-row">
           <button className="btn-primary" onClick={handleSave} disabled={saving}>
             <SaveOutlined /> {saving ? '保存中...' : '记录此刻'}
           </button>
@@ -220,10 +220,7 @@ function DiaryDetail() {
                 <RobotOutlined /> {evaluating ? 'AI思考中...' : 'AI说'}
               </button>
               
-              <button 
-                className="btn-secondary btn-danger" 
-                onClick={handleDelete}
-              >
+              <button className="btn-secondary btn-danger" onClick={handleDelete}>
                 <DeleteOutlined /> 删除
               </button>
             </>
@@ -240,6 +237,7 @@ function DiaryDetail() {
           ) : (
             evaluationAngles.map(([angle, content]) => (
               <div key={angle} className="evaluation-card">
+                <div className="evaluation-title">{String(angle).replaceAll('_', ' ')}</div>
                 <div className="evaluation-content">{content}</div>
               </div>
             ))

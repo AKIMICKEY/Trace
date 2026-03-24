@@ -110,10 +110,10 @@ function Profile() {
   return (
     <div>
       <div className="portrait-section watercolor-border">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div className="section-header profile-header">
+          <div className="icon-title-row">
             <HenjiIcon size={40} />
-            <h2 style={{ margin: 0 }}>
+            <h2 className="section-title">
               <UserOutlined /> 个人中心
             </h2>
           </div>
@@ -127,14 +127,7 @@ function Profile() {
           </Button>
         </div>
 
-        <div style={{ 
-          background: '#f5f5f5', 
-          padding: 12, 
-          borderRadius: 8, 
-          marginBottom: 24,
-          fontSize: 13,
-          color: '#666'
-        }}>
+        <div className="info-banner">
           <strong>用户ID:</strong> {userId}
         </div>
 
