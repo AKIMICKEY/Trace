@@ -62,29 +62,17 @@ function Home() {
     const isSelected = value.isSame(selectedDate, 'day')
     
     return (
-      <div 
-        className="date-cell"
-        style={{
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          background: isSelected ? '#f0f2ff' : 'transparent',
-          borderRadius: 8
-        }}
+      <button
+        type="button"
+        className={`date-cell-btn ${isSelected ? 'is-selected' : ''} ${isToday ? 'is-today' : ''}`}
         onClick={() => handleDateSelect(value)}
+        aria-label={value.format('YYYY-MM-DD')}
       >
-        <span style={{
-          fontSize: 14,
-          fontWeight: isToday ? 600 : 400,
-          color: isToday ? '#667eea' : '#333'
-        }}>
+        <span className="date-cell-number">
           {value.date()}
         </span>
         {hasDiary && <div className="date-dot" />}
-      </div>
+      </button>
     )
   }
 
@@ -95,21 +83,20 @@ function Home() {
   return (
     <div>
       <div className="diary-card watercolor-border">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-          <h3 style={{ margin: 0 }}>
+        <div className="section-header">
+          <h3 className="section-title">
             {selectedDate.format('YYYY年MM月DD日')}
           </h3>
           <button 
             className="btn-secondary" 
             onClick={() => setShowCalendar(!showCalendar)}
-            style={{ padding: '8px 16px', fontSize: 13 }}
           >
             <CalendarOutlined /> {showCalendar ? '隐藏日历' : '选择日期'}
           </button>
         </div>
         
         {showCalendar && (
-          <div className="calendar-container" style={{ marginBottom: 16, padding: 12 }}>
+          <div className="calendar-container compact">
             <Calendar 
               value={selectedDate}
               onSelect={(date) => {
@@ -144,17 +131,11 @@ function Home() {
               </div>
             )}
             {todayDiary.content && (
-              <p style={{ 
-                color: '#666', 
-                lineHeight: 1.8,
-                maxHeight: 120,
-                overflow: 'hidden',
-                textOverflow: 'ellipsis'
-              }}>
+              <p className="diary-preview-text">
                 {todayDiary.content}
               </p>
             )}
-            <button className="btn-secondary" onClick={goToDiary} style={{ marginTop: 12 }}>
+            <button className="btn-secondary mt-12" onClick={goToDiary}>
               查看详情
             </button>
           </div>
@@ -162,7 +143,7 @@ function Home() {
           <div className="empty-state">
             <div className="empty-icon">📝</div>
             <p>这一天还没有记录</p>
-            <button className="btn-primary" onClick={goToDiary} style={{ marginTop: 12 }}>
+            <button className="btn-primary mt-12" onClick={goToDiary}>
               <PlusOutlined /> 写日记
             </button>
           </div>
